@@ -9,7 +9,7 @@ spring:
 # AWS localstack configuration
 cloud:
   aws:
-    credencials:
+    credentials:
       access-key: ANUJDEKAVADIYAEXAMPLE
       secret-key: 2QvM4/Tdmf38SkcD/qalvXO4EXAMPLEKEY
     region:

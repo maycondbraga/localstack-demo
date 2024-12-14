@@ -22,7 +22,7 @@ public class NotificationService {
     }
 
     public void notifyTopic(NotificationMessage message) {
-        log.info("Notifying topic {}", eventsConfig.getTopic());
+        log.info("notifying topic: {}", eventsConfig.getTopic());
         notificationMessagingTemplate.sendNotification(eventsConfig.getTopic(), message, "notification");
     }
 }
