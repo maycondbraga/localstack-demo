@@ -1,0 +1,23 @@
+# Spring boot configuration
+spring:
+  application:
+    name: localstack-demo
+  cloud:
+    config:
+      enabled: false
+
+# AWS localstack configuration
+cloud:
+  aws:
+    credencials:
+      access-key: ANUJDEKAVADIYAEXAMPLE
+      secret-key: 2QvM4/Tdmf38SkcD/qalvXO4EXAMPLEKEY
+    region:
+      static: us-east-1
+    endpoint:
+      uri: http://localhost:4566
+
+# AWS services
+events:
+  topic: notification-topic
+  queue: notification-queue
