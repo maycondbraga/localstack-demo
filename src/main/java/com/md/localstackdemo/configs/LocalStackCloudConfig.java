@@ -10,6 +10,7 @@ import com.amazonaws.services.sqs.AmazonSQSAsyncClientBuilder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.aws.messaging.config.QueueMessageHandlerFactory;
 import org.springframework.cloud.aws.messaging.core.NotificationMessagingTemplate;
+import org.springframework.cloud.aws.messaging.core.QueueMessagingTemplate;
 import org.springframework.cloud.aws.messaging.listener.QueueMessageHandler;
 import org.springframework.cloud.aws.messaging.listener.SimpleMessageListenerContainer;
 import org.springframework.context.annotation.Bean;
@@ -34,6 +35,11 @@ public class LocalStackCloudConfig {
     @Bean
     public NotificationMessagingTemplate notificationMessagingTemplate(AmazonSNS amazonSNS) {
         return new NotificationMessagingTemplate(amazonSNS);
+    }
+
+    @Bean
+    public QueueMessagingTemplate queueMessagingTemplate() {
+        return new QueueMessagingTemplate(amazonSQSAsync());
     }
 
     @Bean
